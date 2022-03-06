@@ -17,3 +17,7 @@ receivers:
     auth_username: 'email_id@mail.com'
     auth_identity: 'email_id@mail.com'
     auth_password: 'password'
+
+templates:
+      - 'template/email.tmpl' 
+    # - 'template/wechat.tmpl' 
