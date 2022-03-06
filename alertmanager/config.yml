@@ -1,6 +1,10 @@
 global:
   resolve_timeout: 5m
 
+templates:
+      - 'template/email.tmpl' 
+    # - 'template/wechat.tmpl' 
+
 route:
   group_by: ['alertname']
   group_wait: 10s
@@ -17,7 +21,14 @@ receivers:
     auth_username: 'email_id@mail.com'
     auth_identity: 'email_id@mail.com'
     auth_password: 'password'
+    html: '{{ template "email.html" . }}' 
 
-templates:
-      - 'template/email.tmpl' 
-    # - 'template/wechat.tmpl' 
+#receivers:
+#- name: 'wechat'
+#  wechat_configs:
+#  - corp_id: xxxx
+#    to_user: 'user'
+#    agent_id: 100000
+#    api_secret: xxxxxxxxxxxxxxxxxxxxxx
+#    send_resolved: true
+#    message: '{{ template "wechat.html" . }}'
