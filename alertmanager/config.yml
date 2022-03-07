@@ -15,21 +15,11 @@ route:
 receivers:
 - name: 'email'
   email_configs:
-    to: 'user2@mail.com'
+  - to: 'user2@mail.com'
     send_resolved: true
-    smtp_from: 'spacegate bot <space@token01.com>'
+    from: 'spacegate bot <space@token01.com>'
     smarthost: smtp.mail.com:587
     auth_username: 'email_id@mail.com'
     auth_identity: 'email_id@mail.com'
     auth_password: 'password'
-    html: '{{ template "email.html" . }}' 
-
-#receivers:
-#- name: 'wechat'
-#  wechat_configs:
-#  - corp_id: xxxx
-#    to_user: 'user'
-#    agent_id: 100000
-#    api_secret: xxxxxxxxxxxxxxxxxxxxxx
-#    send_resolved: true
-#    message: '{{ template "wechat.html" . }}'
+    html: '{{ template "email.html" }}' 
