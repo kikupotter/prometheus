@@ -1,1 +1,3 @@
 .vscode/launch.json
+nginx/log/*.log
+nginx/cert/
