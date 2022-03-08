@@ -1,0 +1,20 @@
+[
+  {
+    "labels": {
+      "job": "spacegate-node",
+      "env": "prod"
+    },
+    "targets": [
+      "194.163.43.47:9100"
+   ]
+  },
+  {
+    "labels": {
+      "job": "spacegate-mysql",
+      "env": "prod"
+    },
+    "targets": [
+      "194.163.43.47:9104"
+   ]
+  }
+]
