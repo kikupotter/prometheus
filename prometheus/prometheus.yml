@@ -7,7 +7,7 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-      monitor: 'my-project'
+      monitor: 'prometheus'
 
 # Load and evaluate rules in this file every 'evaluation_interval' seconds.
 rule_files:
@@ -60,14 +60,6 @@ scrape_configs:
 #      - 'tasks.pushgateway'
 #      type: 'A'
 #      port: 9091
-
-#  - job_name: spacegate-mysql
-#    static_configs:
-#      - targets: ['194.163.43.47:9104']
-#
-#  - job_name: spacegate-host
-#    static_configs:
-#      - targets: ['194.163.43.47:9100']
 
   - job_name: 'file-sg-fd'
     file_sd_configs:

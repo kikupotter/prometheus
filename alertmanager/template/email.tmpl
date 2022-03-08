@@ -1,16 +1,8 @@
 {{ define "email.html" }}
-    {{- if gt (len .Alerts.Firing) 0 -}}{{ range .Alerts }}
-    @警报<br>
-    实例: {{ .Labels.instance }}<br>
-    信息: {{ .Annotations.summary }}<br>
-    详情: {{ .Annotations.description }}<br>
-    时间: {{ (.StartsAt.Add 28800e9).Format "2006-01-02 15:04:05" }}<br>
-    {{ end }}{{ end -}}<br>
-    {{- if gt (len .Alerts.Resolved) 0 -}}{{ range .Alerts }}<br>
-    @恢复<br>
-    实例: {{ .Labels.instance }}<br>
-    信息: {{ .Annotations.summary }}<br>
-    时间: {{ (.StartsAt.Add 28800e9).Format "2006-01-02 15:04:05" }}<br>
-    恢复: {{ (.StartsAt.Add 28800e9).Format "2006-01-02 15:04:05" }}<br>
-    {{ end }}{{ end -}}
-    {{- end }}
+<table>
+    <tr><td>报警名</td><td>开始时间</td></tr>
+    {{ range $i, $alert := .Alerts }}
+        <tr><td>{{ index $alert.Labels "alertname" }}</td><td>{{ $alert.StartsAt }}</td></tr>
+    {{ end }}
+</table>
+{{- end }}
