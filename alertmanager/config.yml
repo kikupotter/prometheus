@@ -15,11 +15,11 @@ route:
 receivers:
 - name: 'email'
   email_configs:
-  - to: '747388744@qq.com'
+  - to: 'xxx@qq.com'
     send_resolved: true
-    from: 'spacegate bot <alert@spacegate.finance>'
-    smarthost:  smtp.hostinger.com:465
-    auth_username: 'alert@spacegate.finance'
-    auth_password: 'Spacegate1!'
+    from: 'spacegate bot <alert@xxx>'
+    smarthost:  smtp.xxx.com:465
+    auth_username: 'alert@xxx'
+    auth_password: 'xxx!'
     require_tls: false
     #html: '{{ template "email.html" }}' 
